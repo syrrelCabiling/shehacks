@@ -1,0 +1,173 @@
+import time;
+from flask import Flask
+
+print("Hi there! Welcome to Scotiabank Online Helper! Unsure of where to start? Choose one of the options that you require to get assitance in!")
+print (" *** Heads up! At any point, you want to exit this, please type in 'exit'! **** \n")
+#time.sleep(5);
+
+print("A) Checking Account\nB) Saving Account\nC) Student Account\n")
+
+loopFlag = True
+true_false = None
+
+user_input = str(input("Please enter a option: "))
+
+while (loopFlag == True):
+    if (user_input.lower() == "exit" or user_input.lower()  == "a" or user_input.lower() == "b" or user_input.lower() == "c"):
+        loopFlag = False
+    else:
+        print("Yikes, that's an invalid input! Try again!\n")
+        user_input = str(input("Please enter a option: \n"))
+
+
+if (user_input.lower() == "exit"):
+    print("Alright! Have a good one!")
+
+
+elif (user_input.lower() == "a"):
+    print("To get started on your Checking account, I'm going to ask how much you're willing to pay monthly?\n")
+    print("A) Less than $11.00\nB) Between $11.00 and $15.00\nC) Greater than $15.00\n")
+
+    monthly_budget = str(input("Please enter a option: \n"))
+    loopFlag = True
+    while (loopFlag == True):
+        if (monthly_budget.lower() == "exit" or monthly_budget.lower() == "a" or monthly_budget.lower() == "b" or monthly_budget.lower() == "c"):
+            loopFlag = False
+        else:
+            print("Yikes, that's an invalid input! Try again!")
+            monthly_budget = str(input("Please enter a option: "))
+
+    if (monthly_budget.lower() == "a"):
+        print("Sounds good! Next question: How many times do you think you'll use your card in a month (i.e., Number of Debit Transactions?)\n")
+        print("A) I'm broke...gotta control myself...so 12 times \nB) I think about 25 times ~~ \n")
+        debit_transactions = str(input("Please enter an option: "))
+
+        loopFlag = True
+        while (loopFlag == True):
+            if (debit_transactions.lower() == "exit" or debit_transactions.lower() == "a" or debit_transactions.lower() == "b"):
+                loopFlag = False
+            else:
+                print("Yikes, that's an invalid input! Try again!")
+                debit_transactions = str(input("Please enter a option: "))
+
+        if (debit_transactions.lower() == "a"):
+            print("Hmmm....well Based on what you're telling me, you probably need to stick with: BASIC BANKING ACCOUNT\n")
+            print("With this account, you're looking at paying a monthly fee of $3.95. You can withdraw money from your account 12 times a month...and as a bonus we'll throw you two free E-transfers!")
+            true_false = str(input("Would you like to know more information about this account? (Y/N)"))
+
+            loopFlag = True
+            while (loopFlag == True):
+                if (true_false.lower() == "exit" or "y" or "n"):
+                    loopFlag = False
+                else:
+                    print("Yikes, that's an invalid input! Try again!\n")
+                    true_false = str(input("Please enter a option: "))
+
+            if (true_false.lower() == "y"):
+                print(
+                    "With a Basic Banking Account, you'll be charged with an extra $1.25 if you go over your 12 transactions per month! You'll have no interest rate and you can purchase checks with the account")
+
+            elif (true_false.lower() == "n"):
+                print("Okie dokes!")
+
+            else:
+                print("Okie Dokes...exiting the program!")
+
+        elif (debit_transactions.lower() == "b"):
+            print("Hmmm....well Based on what you're telling me, you probably need to stick with: BASIC BANKING PLAN\n")
+            print("With this account, you're looking at paying a monthly fee of $10.95. You can withdraw money from your account 25 times a month...and as a bonus we'll throw you two free E-transfers!")
+            print("Would you like to know more information about this account? (Y/N")
+
+            loopFlag = True
+            while (loopFlag == True):
+                if (true_false.lower() == "exit" or "y" or "n"):
+                    loopFlag = False
+                else:
+                    print("Yikes, that's an invalid input! Try again!\n")
+                    debit_transactions = str(input("Please enter a option: "))
+
+
+            if (true_false.lower() == "y"):
+                print("With a Basic Banking Plan, you'll be charged with an extra $1.25 if you go over your 25 transactions per month! You'll have no interest rate and you can purchase checks with the account")
+
+            elif (true_false.lower() == "n"):
+                print("Okie dokes!")
+            else:
+                print("Okie Dokes...exiting the program!")
+
+        else:
+            print("Okie Dokes...exiting the program!")
+
+    elif (monthly_budget.lower() == "b"):
+        print("Hmm...okay..based on our services, we recommend you using a: SCOTIA ONE CHECKING ACCOUNT\n")
+        print(" With this account, you're looking at paying a monthly fee of $13.95 and withdraw money unlimited times with no additional charges! Along with that, you can do up to a maximum of 2 E-transfers per month, have no interest rate and purchase any checks!")
+
+
+    elif(monthly_budget.lower() == "c"):
+        print("In that case, you should consider a SCOTIA MOMENTUM CHECKING ACCOUNT! You'll be paying a monthly fee of $15.95 and withdraw money unlimited times with no additional charges! Along with that, we'll throw in 2 free E-transfers, purchase checks and even give you 1% CASHBACK!\n")
+
+    else:
+        print("Okie Dokes...exiting the program!")
+
+
+elif (user_input.lower() == "b"):
+    print("To get started on your Savings account, I'm going to ask a few yes or no questions!\n")
+    print("Are you planning on having very little money in your account and still looking to earn some money through flat interest?(Y/N)")
+    true_false = str(input("Please enter an option: "))
+
+    loopFlag = True
+    while (loopFlag == True):
+        if (true_false.lower() == "exit" or true_false.lower() == "y" or  true_false.lower() =="n"):
+            loopFlag = False
+        else:
+            print("Yikes, that's an invalid input! Try again!\n")
+            true_false = str(input("Please enter a option: "))
+
+    if (true_false.lower()=="y"):
+        print("Well my friend, you're probably looking at going for a MONEY MASTER SAVINGS ACCOUNT. Here you can earn interest on little as $1.00 with a flat interest rate. You won't have any monthly payments and have unlimited debit transactions ")
+
+    elif (true_false.lower() == "exit"):
+        print("OKIE dokes!")
+
+    elif (true_false.lower()=="n"):
+        print("Okay, so I'm assuming you'll have a little bit of extra cash! In that case you should consider a Savings Accelerator Program. With a SAVINGS ACCELERATOR PROGRAM, you'll need to have a minimum balance (call in to check how much), and also earn at a higher interest rate compared to a Money Masters Savings Account!")
+        true_false = str(input("Would you like another recommendation? "))
+
+        loopFlag = True
+        while (loopFlag == True):
+            if (true_false.lower() == "exit" or "y" or "n"):
+                loopFlag = False
+            else:
+                print("Yikes, that's an invalid input! Try again!\n")
+                true_false = str(input("Please enter a option: "))
+
+
+        if (true_false.lower()=='y'):
+            print("Sigh....our only other option is a SCOTIABANK MOMENTUM ACCOUNT. But this has a lot of other perks as well. If you're planning on having this account for a loooooong time, you'll have a higher interest rate! And the best part, no monthly fee or a minimum balance is required...you're welcome!")
+
+        elif(true_false.lower()=='n'):
+            print("Awesome! Glad that you're sticking with a SAVINGS ACCELERATOR PROGRAM")
+
+elif (user_input.lower() == "c"):
+    print("Student huh?...This will be easy!...how old are you? \n")
+    age = None
+    loopFlag = True
+
+    while (loopFlag == True):
+
+        try:
+            age = int(input("Please enter your age: "))
+            loopFlag = False
+        except ValueError:
+            print("That's not a number! Try again!")
+            continue
+
+
+
+    if (age <= 18):
+        print("A GETTING THERE SAVINGS PROGRAM FOR YOUTH")
+        print("This is more like a savings account...you can withdraw and deposit money, but you don't get any checks! Buuuuuut....you cane earn SCENE points and Travel Rewards. Your SCENE points can be a used to get free movies, meals and much more! The best part is that there's no monthly fee, unlimited transactions")
+
+    elif (age > 18):
+        print("You should chooooose: STUDENT BANKING ACCOUNT")
+        print("This account is meant for students planning on pursuing a post secondary school. You can earn SCENE points, Travel Rewards with unlimited transactions!...And now, you'll be like WHAT ARE SCENE POINTS? ... and I'll be like SCENE POINTS are a great way to get free food, movies, and meals! ")
